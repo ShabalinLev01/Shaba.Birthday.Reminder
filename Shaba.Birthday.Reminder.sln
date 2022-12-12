@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shaba.Birthday.Reminder.Bot", "Shaba.Birthday.Reminder.Bot\Shaba.Birthday.Reminder.Bot.csproj", "{337328A2-741A-4261-872B-2A16A48F2F8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shaba.Birthday.Reminder.Bot.Services", "Shaba.Birthday.Reminder.Bot.Services\Shaba.Birthday.Reminder.Bot.Services.csproj", "{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E993BDBC-5BBE-4B09-80BD-42AB17AE6396}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bot", "Bot", "{1088BCBD-949D-4729-9FFF-1F144EB0C931}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shaba.Birthday.Reminder.API", "Shaba.Birthday.Reminder.API\Shaba.Birthday.Reminder.API.csproj", "{591397FA-5AC6-4460-828B-824314B64734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{E970C09F-0689-4C35-BA17-1120DD69CE35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shaba.Birthday.Reminder.Repository", "Shaba.Birthday.Reminder.Repository\Shaba.Birthday.Reminder.Repository.csproj", "{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337328A2-741A-4261-872B-2A16A48F2F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337328A2-741A-4261-872B-2A16A48F2F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337328A2-741A-4261-872B-2A16A48F2F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337328A2-741A-4261-872B-2A16A48F2F8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591397FA-5AC6-4460-828B-824314B64734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591397FA-5AC6-4460-828B-824314B64734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591397FA-5AC6-4460-828B-824314B64734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591397FA-5AC6-4460-828B-824314B64734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{337328A2-741A-4261-872B-2A16A48F2F8B} = {1088BCBD-949D-4729-9FFF-1F144EB0C931}
+		{3E52FEF4-7BF3-40AB-B102-EC0CBBC12A89} = {1088BCBD-949D-4729-9FFF-1F144EB0C931}
+		{591397FA-5AC6-4460-828B-824314B64734} = {E993BDBC-5BBE-4B09-80BD-42AB17AE6396}
+		{A6F05F15-7E33-4260-9F3B-C5BE85AA63F0} = {E970C09F-0689-4C35-BA17-1120DD69CE35}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {454736D5-5D56-436A-A34C-76DEE5B247CB}
+	EndGlobalSection
+EndGlobal
