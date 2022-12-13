@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Shaba.Birthday.Reminder.Bot/Properties/ServiceDependencies/ShabaBirthdayReminderBot - Zip Deploy
+/Shaba.Birthday.Reminder.Bot/Properties/serviceDependencies.ShabaBirthdayReminderBot - Zip Deploy.json

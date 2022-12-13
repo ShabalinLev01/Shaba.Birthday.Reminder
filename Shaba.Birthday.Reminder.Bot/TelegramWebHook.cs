@@ -33,8 +33,16 @@ namespace Shaba.Birthday.Reminder.Bot
 		{
 			var handleUpdateFunctionUrl = req.GetEncodedUrl().Replace("Setup", "TelegramWebHook",
 				ignoreCase: true, culture: CultureInfo.InvariantCulture);
-			await _botService.SetWebhookAsync(handleUpdateFunctionUrl);
-			return new OkObjectResult($"Changed to {handleUpdateFunctionUrl}");
+			try
+			{
+				await _botService.SetWebhookAsync(handleUpdateFunctionUrl);
+				return new OkObjectResult($"Changed to {handleUpdateFunctionUrl}");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
 		}
 
 
@@ -48,30 +56,6 @@ namespace Shaba.Birthday.Reminder.Bot
 				using var sr = new StreamReader(req.Body);
 				string requestBody = await sr.ReadToEndAsync();
 				await _messageProcessor.Process(requestBody);
-
-				/*var update = JsonConvert.DeserializeObject<Update>(requestBody);
-				if (update.Type == UpdateType.Unknown)
-				{
-					return new BadRequestResult();
-				}
-
-
-				try
-				{
-					var firstName = update.Message?.From?.FirstName;
-					var lastName = update.Message?.From?.LastName;
-					var username = update.Message?.From?.Username;
-
-					await _botService.SendText(update.Message?.From?.Id ?? update?.CallbackQuery?.From?.Id, $"I can say only: \"Hello, {firstName ?? lastName ?? username}\"");
-
-				}
-				catch (ApiRequestException e)
-				{
-					return new BadRequestResult();
-				}
-
-				_logger.LogInformation("C# HTTP trigger function processed a request.");
-				return new OkResult();*/
 			}
 			catch (Exception e)
 			{
