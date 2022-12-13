@@ -2,7 +2,7 @@ name: Build and deploy .NET Core application to Function App ShabaBirthdayRemind
 on:
   push:
     branches:
-    - dev
+    - master
 env:
   AZURE_FUNCTIONAPP_NAME: ShabaBirthdayReminderBot
   AZURE_FUNCTIONAPP_PACKAGE_PATH: Shaba.Birthday.Reminder.Bot/.
