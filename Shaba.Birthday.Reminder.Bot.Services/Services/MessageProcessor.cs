@@ -62,7 +62,6 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 			
 			ReplyKeyboardMarkup keyboard = new ReplyKeyboardMarkup(button);
 			
-			// https://github.com/TelegramBots/Telegram.Bot/blob/master/src/Telegram.Bot/TelegramBotClient.cs#L506
 			await _botService.SendText(update?.Message?.Chat.Id, "Please send location for allocate your time zone", replyMarkup: keyboard);
 		}
 	}

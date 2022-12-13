@@ -11,7 +11,9 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 
 	    public BotService(IHttpClientFactory httpClientFactory)
 	    {
-		    _botClient = new TelegramBotClient("5832575812:AAH0P7d_2zPv1I3hW-f_Sfd1PArsRTqLUI4", httpClientFactory.CreateClient());
+		    var ccc = Environment.GetEnvironmentVariable("TelegramToken");
+
+			_botClient = new TelegramBotClient(Environment.GetEnvironmentVariable("TelegramToken") ?? throw new NullReferenceException(), httpClientFactory.CreateClient());
 	    }
 
 	    public async Task<Message> SendText(ChatId chatId, string text, IReplyMarkup replyMarkup = null)
