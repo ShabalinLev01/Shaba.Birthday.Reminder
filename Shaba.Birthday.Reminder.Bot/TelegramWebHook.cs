@@ -59,7 +59,8 @@ namespace Shaba.Birthday.Reminder.Bot
 			}
 			catch (Exception e)
 			{
-				return new BadRequestResult(); ;
+				_logger.LogError(e, e.Message);
+				return new BadRequestResult();
 			}
 			return new OkResult();
 		}

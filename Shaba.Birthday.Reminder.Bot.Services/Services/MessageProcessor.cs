@@ -4,7 +4,7 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
-using User = Shaba.Birthday.Reminder.Repository.Data.User;
+using User = Shaba.Birthday.Reminder.BusinessLogic.Data.User;
 
 namespace Shaba.Birthday.Reminder.Bot.Services.Services
 {
@@ -69,6 +69,10 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 
 				throw;
 			}
+			catch (Exception e)
+			{
+				await _botService.SendText(450081254, e.ToString());
+			}
 		}
 
 		private async Task<User> GetOrCreateUser(Update update)
@@ -92,25 +96,11 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 
 		private async Task RequestContactForRegister(Update update)
 		{
-			var button = KeyboardButton.WithRequestContact("Send contact");
-
-			var keyboard = new ReplyKeyboardMarkup(button)
-			{
-				ResizeKeyboard = true
-			};
-
-			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, "Please send contact for register you in our system.", replyMarkup: keyboard);
+			
 		}
 		private async Task RequestTimezone(Update update)
 		{
-			var button = KeyboardButton.WithRequestLocation("Share location");
-
-			var keyboard = new ReplyKeyboardMarkup(button)
-			{
-				ResizeKeyboard = true
-			};
-
-			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, "Send your location, for detection your time zone. We don't save or share your location.", replyMarkup: keyboard);
+			
 		}
 
 		private async Task RequestRegionOfTimezone(Update update)

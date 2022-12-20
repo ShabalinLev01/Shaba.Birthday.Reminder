@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Shaba.Birthday.Reminder.Repository.Data;
+using Shaba.Birthday.Reminder.BusinessLogic.Data;
 
 namespace Shaba.Birthday.Reminder.Repository
 {

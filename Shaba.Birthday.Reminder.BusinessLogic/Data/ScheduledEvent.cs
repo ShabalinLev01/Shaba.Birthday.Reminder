@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Shaba.Birthday.Reminder.Repository.Data
+namespace Shaba.Birthday.Reminder.BusinessLogic.Data
 {
 	public class ScheduledEvent
 	{
@@ -9,9 +9,9 @@ namespace Shaba.Birthday.Reminder.Repository.Data
 		[Required]
 		public Guid Id { get; set; }
 
+		[ForeignKey("User")]
 		public long UserId { get; set; }
 
-		[ForeignKey("UserId")]
 		public User User { get; set; }
 
 		[Required]

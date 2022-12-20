@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 /Shaba.Birthday.Reminder.Bot/Properties/ServiceDependencies/ShabaBirthdayReminderBot - Zip Deploy
 /Shaba.Birthday.Reminder.Bot/Properties/serviceDependencies.ShabaBirthdayReminderBot - Zip Deploy.json
+/Shaba.Birthday.Reminder.Repository/DBDesignTimeContextFactory.cs
+/Shaba.Birthday.Reminder.Repository/DBDesignTimeContextFactory.cs

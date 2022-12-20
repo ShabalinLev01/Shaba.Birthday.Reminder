@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,11 +19,13 @@ namespace Shaba.Birthday.Reminder.Bot
 		{
 			builder.Services.AddDbContextPool<BirthdayContext>((options) => options.UseSqlServer(Environment.GetEnvironmentVariable("ShabaBirthdayReminderDB")));
 			builder.Services.AddScoped<IBotService, BotService>();
-			builder.Services.AddSingleton<IBotResourceService, BotResourceService>();
+            builder.Services.AddSingleton<IBotResourceService, BotResourceService>();
+            builder.Services.AddSingleton<IReplyMarkupFactory, ReplyMarkupFactory>();
 			builder.Services.AddScoped<IMessageProcessor, MessageProcessor>();
 			builder.Services.AddScoped<IUserRepository, UserRepository>();
 			builder.Services.AddScoped<ICommandResolver, CommandResolver>();
 			builder.Services.AddCommands();
+
 			builder.Services.AddHttpClient();
 		}
 	}

@@ -1,6 +1,6 @@
-﻿using Shaba.Birthday.Reminder.Repository.Data;
-using Shaba.Birthday.Reminder.BusinessLogic;
+﻿using Shaba.Birthday.Reminder.BusinessLogic;
 using Microsoft.EntityFrameworkCore;
+using Shaba.Birthday.Reminder.BusinessLogic.Data;
 
 namespace Shaba.Birthday.Reminder.Repository.Repository
 {

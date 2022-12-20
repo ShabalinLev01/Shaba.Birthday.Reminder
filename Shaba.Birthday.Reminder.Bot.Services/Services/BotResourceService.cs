@@ -1,13 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
+using System.Resources;
+using Shaba.Birthday.Reminder.Bot.Services.Resources;
 using Shaba.Birthday.Reminder.BusinessLogic;
 
 namespace Shaba.Birthday.Reminder.Bot.Services.Services
 {
-	public interface BotResourceService : IBotResourceService
+	public class BotResourceService : IBotResourceService
 	{
+		private readonly ResourceManager _rm;
+
+		public BotResourceService()
+		{
+			_rm = new ResourceManager(typeof(Answers));
+		}
+
+		public string Get(string name, Language? ci)
+		{
+			return _rm.GetString(name, new CultureInfo(ci?.ToString() ?? "en"))!;
+		}
 	}
 }

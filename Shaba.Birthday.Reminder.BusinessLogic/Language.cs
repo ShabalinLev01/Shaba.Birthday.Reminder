@@ -1,4 +1,4 @@
-﻿namespace Shaba.Birthday.Reminder.Repository
+﻿namespace Shaba.Birthday.Reminder.BusinessLogic
 {
 	public enum Language
 	{
