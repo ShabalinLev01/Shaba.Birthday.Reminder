@@ -31,6 +31,11 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 		    await _botClient.AnswerCallbackQueryAsync(callbackQueryId, text, showAlert);
 	    }
 
+	    public async Task RemoveReplyMarkup(ChatId chatId, int messageId)
+	    {
+		    //_botClient.EditMessageReplyMarkupAsync(chatId, messageId, null);
+	    }
+
 	    public async Task DeleteMessage(ChatId chatId, int messageId)
 	    {
 		    await _botClient.DeleteMessageAsync(chatId, messageId);

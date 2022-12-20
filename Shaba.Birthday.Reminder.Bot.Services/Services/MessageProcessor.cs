@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Shaba.Birthday.Reminder.Repository;
 using Telegram.Bot.Exceptions;
-using Telegram.Bot.Requests;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
+using User = Shaba.Birthday.Reminder.Repository.Data.User;
 
 namespace Shaba.Birthday.Reminder.Bot.Services.Services
 {
@@ -12,24 +12,24 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 	{
 		private readonly IUserRepository _userRepository;
 		private readonly IBotService _botService;
+		private readonly ICommandResolver _commandResolver;
 
-		public MessageProcessor(IUserRepository userRepository, IBotService botService)
+		public MessageProcessor(IUserRepository userRepository, IBotService botService, ICommandResolver commandResolver)
 		{
 			_userRepository = userRepository;
 			_botService = botService;
+			_commandResolver = commandResolver;
 		}
 
 		public async Task Process(string updateString)
 		{
 			var update = JsonConvert.DeserializeObject<Update>(updateString);
-			await _botService.SendText(450081254, update.Type.ToString());
 
-			if (update.Type == UpdateType.Unknown)
-			{
-				return;
-			}
+			#if DEBUG
+				await _botService.SendText(450081254, update.Type.ToString());
+			#endif
 
-			if (update.Type == UpdateType.CallbackQuery && !string.IsNullOrEmpty(update.CallbackQuery?.Data))
+			/*if (update.Type == UpdateType.CallbackQuery && !string.IsNullOrEmpty(update.CallbackQuery?.Data))
 			{
 				await _botService.AnswerQueryCallback(update.CallbackQuery?.Id);
 				await _botService.SendText(450081254, update.CallbackQuery.Data);
@@ -45,57 +45,72 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 				}
 
 				await _botService.DeleteMessage(update.CallbackQuery.From.Id, update.CallbackQuery.Message.MessageId);
-			}
+			}*/
 
 			//var user = null//await _userRepository.Get((int)(update.Message?.From?.Id ?? update.CallbackQuery.From.Id));
-
-			if (update.Type == UpdateType.Message)
+			
+			if (update.Type == UpdateType.Unknown)
 			{
-				if (update.Message?.Contact != null)
-				{
-					await RequestTimezone(update);
-				}
-				else
-				{
-					await RequestContactForRegister(update);
-				}
+				return;
 			}
 
-			/*update.Message.Location.*/
+			var user = await GetOrCreateUser(update);
 
 			try
 			{
-				//await _commandResolver.Resolve(update, user);
+				await _commandResolver.Resolve(update, user);
 			}
 			catch (ApiRequestException e)
 			{
 				if (e.ErrorCode == 403) //blocked
 				{
-					//await _userRepository.BlockUser(user);
+					await _userRepository.BlockUser(user);
 				}
 
 				throw;
 			}
 		}
 
+		private async Task<User> GetOrCreateUser(Update update)
+		{
+			var user = await _userRepository.Get(update.Message?.From?.Id ?? update.CallbackQuery?.From.Id ?? throw new InvalidOperationException());
+
+			if (user == null)
+			{
+				user = new User()
+				{
+					Id = update.Message?.From?.Id ?? update.CallbackQuery?.From.Id ?? throw new InvalidOperationException(),
+					FirstName = (update.Message?.From?.FirstName ?? update.CallbackQuery?.From?.FirstName) ?? throw new InvalidOperationException() ,
+					LastName = (update.Message?.From?.LastName ?? update.CallbackQuery?.From?.LastName) ?? throw new InvalidOperationException(),
+					Username = (update.Message?.From?.Username ?? update.CallbackQuery?.From?.Username) ?? throw new InvalidOperationException(),
+				};
+				await _userRepository.Add(user);
+			}
+
+			return user;
+		}
+
 		private async Task RequestContactForRegister(Update update)
 		{
 			var button = KeyboardButton.WithRequestContact("Send contact");
 
-			var keyboard = new ReplyKeyboardMarkup(button);
+			var keyboard = new ReplyKeyboardMarkup(button)
+			{
+				ResizeKeyboard = true
+			};
 
 			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, "Please send contact for register you in our system.", replyMarkup: keyboard);
 		}
 		private async Task RequestTimezone(Update update)
 		{
-			var dictionary = TimeZoneInfo.GetSystemTimeZones().GroupBy(x => x.BaseUtcOffset)
-				.ToDictionary(x => $"UTC " +
-								   $"{new string(x.Key.Hours > 0 ? "+" : x.Key.Hours == 0 ? "±" : "")}" +
-								   $"{x.Key.Hours}:{Math.Abs(x.Key.Minutes).ToString("00")}",
-					y => y.Key.ToString());
-			var ccc = CreateInlineKeyboardButton(dictionary, 4);
+			var button = KeyboardButton.WithRequestLocation("Share location");
 
-			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, "Please select your timezone", replyMarkup: ccc);
+			var keyboard = new ReplyKeyboardMarkup(button)
+			{
+				ResizeKeyboard = true
+			};
+
+			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, "Send your location, for detection your time zone. We don't save or share your location.", replyMarkup: keyboard);
 		}
 
 		private async Task RequestRegionOfTimezone(Update update)
