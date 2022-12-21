@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shaba.Birthday.Reminder.Repository;
 
@@ -11,9 +12,10 @@ using Shaba.Birthday.Reminder.Repository;
 namespace Shaba.Birthday.Reminder.Repository.Migrations
 {
     [DbContext(typeof(BirthdayContext))]
-    partial class BirthdayContextModelSnapshot : ModelSnapshot
+    [Migration("20221221151426_AddLastAction")]
+    partial class AddLastAction
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

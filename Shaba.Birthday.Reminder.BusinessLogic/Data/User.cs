@@ -24,5 +24,7 @@ namespace Shaba.Birthday.Reminder.BusinessLogic.Data
 		public string? PhoneNumber { get; set; }
 
 		public bool IsBlock { get; set; }
+		
+		public LastAction? LastAction { get; set; }
 	}
 }

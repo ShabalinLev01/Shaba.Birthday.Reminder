@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNewEvent" xml:space="preserve">
+    <value>➕New event</value>
+  </data>
+  <data name="DeleteEvent" xml:space="preserve">
+    <value>🗑️ Delete</value>
+  </data>
+  <data name="EditEvent" xml:space="preserve">
+    <value>✏️ Edit</value>
+  </data>
   <data name="EmptyPhoneNumber" xml:space="preserve">
     <value>Please send contact for register you in our system:</value>
   </data>
@@ -126,14 +135,17 @@
   <data name="Language" xml:space="preserve">
     <value>Choose your language:</value>
   </data>
+  <data name="ListOfEvents" xml:space="preserve">
+    <value>📄 Events</value>
+  </data>
   <data name="SendCommandForCreatingEvent" xml:space="preserve">
-    <value>Send /newevent for create new notification for event</value>
+    <value>Now you can create, view, delete and edit your events. On the keyboard in this chat, you can see the buttons. Click on the desired button for action.</value>
   </data>
   <data name="SharePhoneNumber" xml:space="preserve">
-    <value>Send contact</value>
+    <value>📱 Send contact</value>
   </data>
   <data name="ShareTimeZone" xml:space="preserve">
-    <value>Send location</value>
+    <value>🗺️ Send location</value>
   </data>
   <data name="SuccessfulRegistration" xml:space="preserve">
     <value>You're successful registrated, {0}.

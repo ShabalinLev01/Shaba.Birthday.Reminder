@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Shaba.Birthday.Reminder.BusinessLogic.Data;
 
 namespace Shaba.Birthday.Reminder.Repository
@@ -19,6 +20,11 @@ namespace Shaba.Birthday.Reminder.Repository
 		{
 			modelBuilder.Entity<ScheduledEvent>().HasIndex(s => s.Id);
 			modelBuilder.Entity<User>().HasIndex(s => s.Id);
+			modelBuilder.Entity<User>().Property(e => e.LastAction).HasConversion(
+				v => JsonConvert.SerializeObject(v,
+					new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include }),
+				v => JsonConvert.DeserializeObject<LastAction>(v,
+					new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include })!);
 		}
 	}
 }

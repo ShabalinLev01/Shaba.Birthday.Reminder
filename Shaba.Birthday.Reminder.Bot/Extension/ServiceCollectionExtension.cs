@@ -15,6 +15,10 @@ namespace Shaba.Birthday.Reminder.Bot.Extension
 			services.AddScoped<SetLanguageCommand>();
 			services.AddScoped<SetContactCommand>();
 			services.AddScoped<SetLocationCommand>();
+			services.AddScoped<AddEventCommand>();
+			services.AddScoped<EditEventCommand>();
+			services.AddScoped<DeleteEventCommand>();
+			services.AddScoped<ListOfEventsCommand>();
 
 			services.AddScoped<CommandChooser>(serviceProvider => key =>
 			{
@@ -24,6 +28,10 @@ namespace Shaba.Birthday.Reminder.Bot.Extension
 					CommandNames.SetLanguageCommand => serviceProvider.GetService<SetLanguageCommand>(),
 					CommandNames.SetContactCommand => serviceProvider.GetService<SetContactCommand>(),
 					CommandNames.SetLocationCommand => serviceProvider.GetService<SetLocationCommand>(),
+					CommandNames.AddEventCommand => serviceProvider.GetService<AddEventCommand>(),
+					CommandNames.EditEventCommand => serviceProvider.GetService<EditEventCommand>(),
+					CommandNames.DeleteEventCommand => serviceProvider.GetService<DeleteEventCommand>(),
+					CommandNames.ListOfEventsCommand => serviceProvider.GetService<ListOfEventsCommand>(),
 					_ => throw new KeyNotFoundException()
 				};
 			});

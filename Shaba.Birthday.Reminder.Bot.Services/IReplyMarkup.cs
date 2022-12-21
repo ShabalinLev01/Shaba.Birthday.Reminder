@@ -1,10 +1,4 @@
-﻿using Shaba.Birthday.Reminder.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Shaba.Birthday.Reminder.BusinessLogic;
+﻿using Shaba.Birthday.Reminder.BusinessLogic;
 using Telegram.Bot.Types.ReplyMarkups;
 
 namespace Shaba.Birthday.Reminder.Bot.Services
@@ -26,5 +20,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services
 		//IReplyMarkup GoToProfileMarkup(Language? lang);
 
 		IReplyMarkup GetLanguageMarkup();
+
+		IReplyMarkup GetBaseFunctionalMarkup(Language? lang);
 	}
 }

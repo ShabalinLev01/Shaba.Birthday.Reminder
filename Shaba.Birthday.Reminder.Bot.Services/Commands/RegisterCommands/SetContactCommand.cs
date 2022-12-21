@@ -1,5 +1,4 @@
-﻿using Shaba.Birthday.Reminder.Bot.Services.Services;
-using Shaba.Birthday.Reminder.BusinessLogic;
+﻿using Shaba.Birthday.Reminder.BusinessLogic;
 using Shaba.Birthday.Reminder.Repository;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
@@ -22,7 +21,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
 		    _replyMarkupFactory = replyMarkupFactory;
 	    }
 
-		public async Task Execute(Update update, User user, string arg = null)
+		public async Task Execute(Update update, User user, string? arg = null)
         {
 	        if (update.Message?.Contact?.PhoneNumber == null)
             {
@@ -32,7 +31,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
                     ResizeKeyboard = true
                 };
 
-				await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("EmptyPhoneNumber", user.Language), keyboard);
+				await _botService.SendText(user.Id, _botResourceService.Get("EmptyPhoneNumber", user.Language), keyboard);
 				return;
 			}
 
@@ -47,17 +46,17 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
 			        ResizeKeyboard = true
 		        };
 
-		        await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("EmptyTimeZone", user.Language), keyboard);
+		        await _botService.SendText(user.Id, _botResourceService.Get("EmptyTimeZone", user.Language), keyboard);
 		        return;
 	        }
 
 	        var timeZone = TimeZoneInfo.FindSystemTimeZoneById(user.TimeZone);
 
-			await _botService.SendText(update?.Message?.Chat?.Id!, string.Format(_botResourceService.Get("SuccessfulRegistration", user.Language), 
+			await _botService.SendText(user.Id, string.Format(_botResourceService.Get("SuccessfulRegistration", user.Language), 
 		        user.FirstName,
 		        timeZone.DisplayName,
 		        TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZone)));
-			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("SendCommandForCreatingEvent", user.Language));
+			await _botService.SendText(user.Id, _botResourceService.Get("SendCommandForCreatingEvent", user.Language));
 		}
     }
 }

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddNewEvent" xml:space="preserve">
+    <value>➕Новое событие</value>
+  </data>
+  <data name="DeleteEvent" xml:space="preserve">
+    <value>🗑️ Удалить</value>
+  </data>
+  <data name="EditEvent" xml:space="preserve">
+    <value>✏️ Редактировать</value>
+  </data>
   <data name="EmptyPhoneNumber" xml:space="preserve">
     <value>Пожалуйста, поделитесь вашим контактом для регистрации в нашей системе:</value>
   </data>
@@ -126,8 +135,11 @@
   <data name="Language" xml:space="preserve">
     <value>Выберите ваш язык:</value>
   </data>
+  <data name="ListOfEvents" xml:space="preserve">
+    <value>📄 События</value>
+  </data>
   <data name="SendCommandForCreatingEvent" xml:space="preserve">
-    <value>Отправьте /newevent для создания нового уведолмения о событии</value>
+    <value>Теперь вы можете создавать, просматривать, удалять и редактировать свои события. На клавиатуре в этом чате вы можете увидеть кнопки. Нажмите на нужную кнопку для действия.</value>
   </data>
   <data name="SharePhoneNumber" xml:space="preserve">
     <value>Отправить контакт</value>

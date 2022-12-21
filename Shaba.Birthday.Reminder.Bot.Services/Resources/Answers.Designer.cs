@@ -61,6 +61,33 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ➕New event.
+        /// </summary>
+        internal static string AddNewEvent {
+            get {
+                return ResourceManager.GetString("AddNewEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🗑️ Delete.
+        /// </summary>
+        internal static string DeleteEvent {
+            get {
+                return ResourceManager.GetString("DeleteEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✏️ Edit.
+        /// </summary>
+        internal static string EditEvent {
+            get {
+                return ResourceManager.GetString("EditEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please send contact for register you in our system:.
         /// </summary>
         internal static string EmptyPhoneNumber {
@@ -88,7 +115,16 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send /newevent for create new notification for event.
+        ///   Looks up a localized string similar to 📄 Events.
+        /// </summary>
+        internal static string ListOfEvents {
+            get {
+                return ResourceManager.GetString("ListOfEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now you can create, view, delete and edit your events. On the keyboard in this chat, you can see the buttons. Click on the desired button for action..
         /// </summary>
         internal static string SendCommandForCreatingEvent {
             get {
@@ -97,7 +133,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send contact.
+        ///   Looks up a localized string similar to 📱 Send contact.
         /// </summary>
         internal static string SharePhoneNumber {
             get {
@@ -106,7 +142,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Send location.
+        ///   Looks up a localized string similar to 🗺️ Send location.
         /// </summary>
         internal static string ShareTimeZone {
             get {

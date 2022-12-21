@@ -26,8 +26,8 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 
 			if (user.Language == null)
 			{
-				string arg = null!;
-				var arr = update.CallbackQuery?.Data?.Split(':');
+				string? arg = null!;
+				string?[]? arr = update.CallbackQuery?.Data?.Split(':');
 				if (arr?.Length > 1)
 				{
 					arg = arr[1];
@@ -51,6 +51,18 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 			if (user.TimeZone == null)
 			{
 				await _commands(CommandNames.SetLocationCommand).Execute(update, user);
+				return;
+			}
+
+			if (!string.IsNullOrEmpty(update.CallbackQuery?.Data))
+			{
+				string? arg = null;
+				string?[]? arr = update.CallbackQuery?.Data?.Split(':');
+
+				await _commands(arr[0]).Execute(update, user, update.CallbackQuery?.Data!);
+
+				await _botService.AnswerQueryCallback(update.CallbackQuery.Id);
+
 				return;
 			}
 

@@ -1,9 +1,4 @@
 ﻿using Shaba.Birthday.Reminder.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using User = Shaba.Birthday.Reminder.BusinessLogic.Data.User;
 
@@ -17,7 +12,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands
         {
             _userRepository = userRepository;
         }
-        public async Task Execute(Update update, User user, string arg = null)
+        public async Task Execute(Update update, User user, string? arg = null)
         {
             await _userRepository.UnBlockUser(user);
         }

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Shaba.Birthday.Reminder.Repository;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.Enums;
@@ -13,21 +14,19 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 		private readonly IUserRepository _userRepository;
 		private readonly IBotService _botService;
 		private readonly ICommandResolver _commandResolver;
+		private readonly ILogger _logger;
 
-		public MessageProcessor(IUserRepository userRepository, IBotService botService, ICommandResolver commandResolver)
+		public MessageProcessor(IUserRepository userRepository, IBotService botService, ICommandResolver commandResolver, ILogger logger)
 		{
 			_userRepository = userRepository;
 			_botService = botService;
 			_commandResolver = commandResolver;
+			_logger = logger;
 		}
 
 		public async Task Process(string updateString)
 		{
 			var update = JsonConvert.DeserializeObject<Update>(updateString);
-
-			#if DEBUG
-				await _botService.SendText(450081254, update.Type.ToString());
-			#endif
 
 			/*if (update.Type == UpdateType.CallbackQuery && !string.IsNullOrEmpty(update.CallbackQuery?.Data))
 			{
@@ -62,16 +61,17 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 			}
 			catch (ApiRequestException e)
 			{
+				_logger.LogError(e, e.Message);
 				if (e.ErrorCode == 403) //blocked
 				{
 					await _userRepository.BlockUser(user);
 				}
-
 				throw;
 			}
 			catch (Exception e)
 			{
-				await _botService.SendText(450081254, e.ToString());
+				_logger.LogError(e, e.Message);
+				throw;
 			}
 		}
 
@@ -92,15 +92,6 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 			}
 
 			return user;
-		}
-
-		private async Task RequestContactForRegister(Update update)
-		{
-			
-		}
-		private async Task RequestTimezone(Update update)
-		{
-			
 		}
 
 		private async Task RequestRegionOfTimezone(Update update)

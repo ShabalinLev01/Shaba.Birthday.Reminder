@@ -1,12 +1,4 @@
 ﻿using Shaba.Birthday.Reminder.BusinessLogic;
-using Shaba.Birthday.Reminder.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands;
 using Shaba.Birthday.Reminder.Bot.Services.Resources;
 using Telegram.Bot.Types.ReplyMarkups;
 using Language = Shaba.Birthday.Reminder.BusinessLogic.Language;
@@ -156,6 +148,23 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 						{CallbackData = CommandNames.SetLanguageCommand + ":" + (int)Language.ru},
 				}
 			});
+		}
+
+		public IReplyMarkup GetBaseFunctionalMarkup(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+				{
+					new[]
+					{
+						new InlineKeyboardButton(_botResourceService.Get("ListOfEvents", lang)) {CallbackData = $"{CommandNames.ListOfEventsCommand}:start"}, 
+						new InlineKeyboardButton(_botResourceService.Get("AddNewEvent", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:start"}
+					},
+					new[]
+					{
+						new InlineKeyboardButton(_botResourceService.Get("EditEvent", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:start"}, 
+						new InlineKeyboardButton(_botResourceService.Get("DeleteEvent", lang)) {CallbackData = $"{CommandNames.DeleteEventCommand}:start"}
+					}
+				});
 		}
 	}
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shaba.Birthday.Reminder.Bot.Services.Resources
+﻿namespace Shaba.Birthday.Reminder.Bot.Services.Resources
 {
 	public static class CommandNames
 	{
@@ -12,5 +6,9 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources
 		public const string SetLanguageCommand = "SetLanguageCommand";
 		public const string SetContactCommand = "SetContactCommand";
 		public const string SetLocationCommand = "SetLocationCommand";
+		public const string AddEventCommand = "AddEventCommand";
+		public const string DeleteEventCommand = "DeleteEventCommand";
+		public const string EditEventCommand = "EditEventCommand";
+		public const string ListOfEventsCommand = "ListOfEventsCommand";
 	}
 }

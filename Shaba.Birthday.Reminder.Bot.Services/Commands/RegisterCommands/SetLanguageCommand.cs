@@ -22,7 +22,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
 		    _botResourceService = botResourceService;
 		    _replyMarkupFactory = replyMarkupFactory;
 	    }
-		public async Task Execute(Update update, User user, string arg = null!)
+		public async Task Execute(Update update, User user, string? arg = null!)
 		{
 			
 
@@ -52,7 +52,7 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
 					ResizeKeyboard = true
 				};
 
-				await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("EmptyPhoneNumber", user.Language), keyboard);
+				await _botService.SendText(user.Id, _botResourceService.Get("EmptyPhoneNumber", user.Language), keyboard);
 				return;
 			}
 			
@@ -64,11 +64,11 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Commands.RegisterCommands
 					ResizeKeyboard = true
 				};
 
-				await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("EmptyTimeZone", user.Language), keyboard);
+				await _botService.SendText(user.Id, _botResourceService.Get("EmptyTimeZone", user.Language), keyboard);
 				return;
 			}
 
-			await _botService.SendText(update?.Message?.Chat?.Id ?? 0, _botResourceService.Get("SendCommandForCreatingEvent", user.Language));
+			await _botService.SendText(user.Id, _botResourceService.Get("SendCommandForCreatingEvent", user.Language));
 		}
     }
 }
