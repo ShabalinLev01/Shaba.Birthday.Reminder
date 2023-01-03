@@ -70,6 +70,33 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose event for view detail information or click on button &quot;New event&quot;..
+        /// </summary>
+        internal static string ChooseEventForDetailsOrAddNew {
+            get {
+                return ResourceManager.GetString("ChooseEventForDetailsOrAddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click on the desired button for action..
+        /// </summary>
+        internal static string ClickButtonForAction {
+            get {
+                return ResourceManager.GetString("ClickButtonForAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 🗑️ Delete.
         /// </summary>
         internal static string DeleteEvent {
@@ -79,11 +106,68 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event: {0},
+        ///Person: {1},
+        ///Date: {2},
+        ///Time: {3}..
+        /// </summary>
+        internal static string DetailedInfoAboutEvent {
+            get {
+                return ResourceManager.GetString("DetailedInfoAboutEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ✅Done.
+        /// </summary>
+        internal static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit date.
+        /// </summary>
+        internal static string EditDate {
+            get {
+                return ResourceManager.GetString("EditDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ✏️ Edit.
         /// </summary>
         internal static string EditEvent {
             get {
                 return ResourceManager.GetString("EditEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit event&apos;s name.
+        /// </summary>
+        internal static string EditName {
+            get {
+                return ResourceManager.GetString("EditName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit person.
+        /// </summary>
+        internal static string EditPerson {
+            get {
+                return ResourceManager.GetString("EditPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit time.
+        /// </summary>
+        internal static string EditTime {
+            get {
+                return ResourceManager.GetString("EditTime", resourceCulture);
             }
         }
         
@@ -106,6 +190,54 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event was successful added!.
+        /// </summary>
+        internal static string EventWasSuccessfulAdded {
+            get {
+                return ResourceManager.GetString("EventWasSuccessfulAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something happened and I don&apos;t see date in your message, please try again. 
+        ///Send date of event in next format: dd/mm/yyyy.
+        /// </summary>
+        internal static string IncorrectDateTryAgain {
+            get {
+                return ResourceManager.GetString("IncorrectDateTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something happened and I don&apos;t see correct number in your message, please try again..
+        /// </summary>
+        internal static string IncorrectNumberOfEventTryAgain {
+            get {
+                return ResourceManager.GetString("IncorrectNumberOfEventTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something happened and I don&apos;t see time in your message, please try again.	
+        ///Send time of event for remind you in next format: hh:mm.
+        /// </summary>
+        internal static string IncorrectTimeTryAgain {
+            get {
+                return ResourceManager.GetString("IncorrectTimeTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info about event:
+        ///.
+        /// </summary>
+        internal static string InfoAboutEvent {
+            get {
+                return ResourceManager.GetString("InfoAboutEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose your language:.
         /// </summary>
         internal static string Language {
@@ -124,11 +256,56 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        internal static string NonePerson {
+            get {
+                return ResourceManager.GetString("NonePerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Now you can create, view, delete and edit your events. On the keyboard in this chat, you can see the buttons. Click on the desired button for action..
         /// </summary>
         internal static string SendCommandForCreatingEvent {
             get {
                 return ResourceManager.GetString("SendCommandForCreatingEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send date of event in next format: dd/mm/yyyy.
+        /// </summary>
+        internal static string SendDateOfEvent {
+            get {
+                return ResourceManager.GetString("SendDateOfEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send name of event.
+        /// </summary>
+        internal static string SendNameOfEvent {
+            get {
+                return ResourceManager.GetString("SendNameOfEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send name of person or just click button &quot;None&quot;.
+        /// </summary>
+        internal static string SendNameOfPerson {
+            get {
+                return ResourceManager.GetString("SendNameOfPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send time of event for remind you in next format: hh:mm.
+        /// </summary>
+        internal static string SendTimeOfEvent {
+            get {
+                return ResourceManager.GetString("SendTimeOfEvent", resourceCulture);
             }
         }
         
@@ -147,6 +324,15 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Resources {
         internal static string ShareTimeZone {
             get {
                 return ResourceManager.GetString("ShareTimeZone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}) Event: &quot;{1}&quot;. Date: {2}.
+        /// </summary>
+        internal static string StringBuilderList {
+            get {
+                return ResourceManager.GetString("StringBuilderList", resourceCulture);
             }
         }
         

@@ -14,123 +14,6 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 			_botResourceService = botResourceService;
 		}
 
-		/*public IReplyMarkup GetLocationMarkup(Language? lang)
-		{
-			/*return new ReplyKeyboardMarkup(new List<IEnumerable<KeyboardButton>>()
-			{
-				new[] { new KeyboardButton(_botResourceService.Get("AttachLocation", lang)) { RequestLocation = true } },
-				new[] { new KeyboardButton(_botResourceService.Get("Back", lang)) }
-			}
-			, true, true);#1#
-		}*/
-
-		/*public IReplyMarkup InlineCancelMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = _botResourceService.Get("Back", lang), CallbackData = nameof(ProfileCommand) + ":0" }); //0 -indicates that need to set ready status
-		}
-
-		public IReplyMarkup GoToProfileMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new InlineKeyboardButton() { Text = _botResourceService.Get("GoToProfile", lang), CallbackData = nameof(ProfileCommand) });
-		}
-
-		public IReplyMarkup GetProfileMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []{new InlineKeyboardButton(){Text = _botResourceService.Get("Search", lang) , CallbackData = nameof(SearchCommand)}, },
-				new []
-				{
-					new InlineKeyboardButton(){Text = _botResourceService.Get("MyMatches", lang) , CallbackData = nameof(MatchCommand)},
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Settings", lang), CallbackData = nameof(SettingsCommand)},
-				}
-			});
-		}
-
-		public IReplyMarkup GetBackMarkup(Language? lang)
-		{
-			return new ReplyKeyboardMarkup(
-				new[] { new KeyboardButton(_botResourceService.Get("Back", lang)) }, true, true);
-		}
-
-		public IReplyMarkup GetSettingsMarkup(string gender, string searchGender, int? radius, Language? lang)
-		{
-			var radiusString = (radius == null ? "♾" : radius.ToString() + "  km");
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []
-				{
-					new InlineKeyboardButton(){Text = _botResourceService.Get("ChangePhoto", lang), CallbackData = nameof(SettingPhotoCommand)},
-					new InlineKeyboardButton(){Text = _botResourceService.Get("ChangeLocation", lang), CallbackData = nameof(SettingLocationCommand)},
-				},
-				new []
-				{
-					new InlineKeyboardButton(){Text = string.Format(_botResourceService.Get("Iam", lang), gender) , CallbackData = nameof(SettingMyGenderCommand)},
-					new InlineKeyboardButton(){Text = string.Format(_botResourceService.Get("LookingFor", lang), searchGender) , CallbackData = nameof(SettingGenderCommand)},
-				},
-				new []
-				{
-					new InlineKeyboardButton(){Text =string.Format(_botResourceService.Get("SearchRadius", lang), radiusString) , CallbackData = nameof(SettingRadiusCommand)},
-					new InlineKeyboardButton(){Text =string.Format(_botResourceService.Get("LanguageSetting", lang)) , CallbackData = nameof(SetLanguageCommand)},
-				},
-				new []{new InlineKeyboardButton(){Text = _botResourceService.Get("Back", lang), CallbackData = nameof(ProfileCommand)}, },
-			});
-		}
-		//Cancel ❌
-		public IReplyMarkup GetSearchGenderMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []
-				{
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Male", lang) , CallbackData = nameof(SetSearchGenderCommand)+ ":" +(int)Gender.Male},
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Female", lang), CallbackData = nameof(SetSearchGenderCommand)+":" +(int)Gender.Female},
-				}
-			});
-		}
-
-		public IReplyMarkup GetMyGenderMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []
-				{
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Male", lang) , CallbackData = nameof(SetMyGenderCommand)+ ":" +(int)Gender.Male},
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Female", lang), CallbackData = nameof(SetMyGenderCommand)+":" +(int)Gender.Female},
-				}
-			});
-		}
-
-		public IReplyMarkup GetRadiusMarkup(Language? lang)
-		{
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []
-				{
-					new InlineKeyboardButton(){Text = "10 km" , CallbackData = nameof(SetRadiusCommand)+ ":10" },
-					new InlineKeyboardButton(){Text = "100 km", CallbackData = nameof(SetRadiusCommand)+":100" },
-				},
-				new []
-				{
-					new InlineKeyboardButton(){Text = "1000 km" , CallbackData = nameof(SetRadiusCommand)+ ":1000" },
-					new InlineKeyboardButton(){Text = _botResourceService.Get("Everywhere", lang), CallbackData = nameof(SetRadiusCommand) },
-				},
-			});
-		}
-
-		public IReplyMarkup GetYesNoMarkup(int id, Language? lang)
-		{
-			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
-			{
-				new []
-				{
-					new InlineKeyboardButton(){Text = $"👎" , CallbackData = nameof(SearchCommand)},
-					new InlineKeyboardButton(){Text = $"❤️", CallbackData = nameof(SearchCommand)+":"+id},
-				},
-				new []{new InlineKeyboardButton(){Text = _botResourceService.Get("Back", lang), CallbackData = nameof(ProfileCommand)}, },
-			});
-		}*/
-
 		public IReplyMarkup GetLocationMarkup(Language? lang)
 		{
 			throw new NotImplementedException();
@@ -156,15 +39,95 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 				{
 					new[]
 					{
-						new InlineKeyboardButton(_botResourceService.Get("ListOfEvents", lang)) {CallbackData = $"{CommandNames.ListOfEventsCommand}:start"}, 
+						new InlineKeyboardButton(_botResourceService.Get("ListOfEvents", lang)) {CallbackData = $"{CommandNames.ListOfEventsCommand}:start"},
 						new InlineKeyboardButton(_botResourceService.Get("AddNewEvent", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:start"}
-					},
-					new[]
-					{
-						new InlineKeyboardButton(_botResourceService.Get("EditEvent", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:start"}, 
-						new InlineKeyboardButton(_botResourceService.Get("DeleteEvent", lang)) {CallbackData = $"{CommandNames.DeleteEventCommand}:start"}
 					}
 				});
+		}
+
+		public IReplyMarkup GetAddEventKeyboard(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+				{
+					new[]
+					{
+						new InlineKeyboardButton(_botResourceService.Get("AddNewEvent", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:start"}
+					}
+				});
+		}
+
+		public IReplyMarkup GetKeyboardForNameOfPerson(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+				{
+					new[]
+					{
+						new InlineKeyboardButton(_botResourceService.Get("NonePerson", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:none_person"}
+					}
+				});
+		}
+
+		public IReplyMarkup GetKeyboardForFinalize(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+			{
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("DeleteEvent", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:delete_specific"},
+					new InlineKeyboardButton(_botResourceService.Get("EditEvent", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_specific"},
+					new InlineKeyboardButton(_botResourceService.Get("Done", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:done"}
+				}
+			});
+		}
+
+		public IReplyMarkup GetCancelKeyboardForAddEvent(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+			{
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("Cancel", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:cancel"}
+				}
+			});
+		}
+
+		public IReplyMarkup GetEditEventKeyboard(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+			{
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("EditName", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_name"},
+					new InlineKeyboardButton(_botResourceService.Get("EditPerson", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_person"}
+				},
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("EditDate", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_date"},
+					new InlineKeyboardButton(_botResourceService.Get("EditTime", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_time"}
+				},
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("Done", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:done"},
+					new InlineKeyboardButton(_botResourceService.Get("DeleteEvent", lang)) {CallbackData = $"{CommandNames.DeleteEventCommand}:delete_specific"}
+				}
+			});
+		}
+
+		public IReplyMarkup GetKeyboardForDetailedEvent(Language? lang)
+		{
+			return new InlineKeyboardMarkup(new List<IEnumerable<InlineKeyboardButton>>()
+			{
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("ListOfEvents", lang)) {CallbackData = $"{CommandNames.ListOfEventsCommand}:start"},
+					new InlineKeyboardButton(_botResourceService.Get("AddNewEvent", lang)) {CallbackData = $"{CommandNames.AddEventCommand}:start"}
+				},
+				new[]
+				{
+					new InlineKeyboardButton(_botResourceService.Get("EditEvent", lang)) {CallbackData = $"{CommandNames.EditEventCommand}:edit_specific"}, 
+					new InlineKeyboardButton(_botResourceService.Get("DeleteEvent", lang)) {CallbackData = $"{CommandNames.DeleteEventCommand}:delete_specific"}
+				}
+			});
 		}
 	}
 }

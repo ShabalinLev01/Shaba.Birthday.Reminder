@@ -120,11 +120,41 @@
   <data name="AddNewEvent" xml:space="preserve">
     <value>➕Новое событие</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ChooseEventForDetailsOrAddNew" xml:space="preserve">
+    <value>Выберите событие для отображения подробной информации отправив нужную цифру или нажмите на кнопку "Новое событие".</value>
+  </data>
+  <data name="ClickButtonForAction" xml:space="preserve">
+    <value>Нажмите на нужную кнопку для действия.</value>
+  </data>
   <data name="DeleteEvent" xml:space="preserve">
     <value>🗑️ Удалить</value>
   </data>
+  <data name="DetailedInfoAboutEvent" xml:space="preserve">
+    <value>Событие: {0},
+Поздравляемый: {1},
+Дата: {2},
+Время: {3}.</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>✅Готово</value>
+  </data>
+  <data name="EditDate" xml:space="preserve">
+    <value>Изменить дату</value>
+  </data>
   <data name="EditEvent" xml:space="preserve">
     <value>✏️ Редактировать</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>Изменить название</value>
+  </data>
+  <data name="EditPerson" xml:space="preserve">
+    <value>Изменить поздравляемого</value>
+  </data>
+  <data name="EditTime" xml:space="preserve">
+    <value>Изменить время</value>
   </data>
   <data name="EmptyPhoneNumber" xml:space="preserve">
     <value>Пожалуйста, поделитесь вашим контактом для регистрации в нашей системе:</value>
@@ -132,20 +162,56 @@
   <data name="EmptyTimeZone" xml:space="preserve">
     <value>Отправьте свое местоположение, для определения вашего часового пояса. Мы не сохраняем и не передаем ваше местоположение:</value>
   </data>
+  <data name="EventWasSuccessfulAdded" xml:space="preserve">
+    <value>Событие было успешно добавлено!</value>
+  </data>
+  <data name="IncorrectDateTryAgain" xml:space="preserve">
+    <value>Что-то случилось и я не могу распознать дату в вашем сообщении, пожалуйста попробуйте снова. 
+Отправьте дату события в следующем формате: дд/мм/гггг</value>
+  </data>
+  <data name="IncorrectNumberOfEventTryAgain" xml:space="preserve">
+    <value>Что-то случилось и я не могу распознать номер события в вашем сообщении, пожалуйста попробуйте снова.</value>
+  </data>
+  <data name="IncorrectTimeTryAgain" xml:space="preserve">
+    <value>Что-то случилось и я не могу распознать время в вашем сообщении, пожалуйста попробуйте снова. 
+Отравьте время события, чтобы напомнить вам о нём в нужное время. Формат сообщения: чч:мм</value>
+  </data>
+  <data name="InfoAboutEvent" xml:space="preserve">
+    <value>Информация о событии:
+</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Выберите ваш язык:</value>
   </data>
   <data name="ListOfEvents" xml:space="preserve">
     <value>📄 События</value>
   </data>
+  <data name="NonePerson" xml:space="preserve">
+    <value>Никто</value>
+  </data>
   <data name="SendCommandForCreatingEvent" xml:space="preserve">
     <value>Теперь вы можете создавать, просматривать, удалять и редактировать свои события. На клавиатуре в этом чате вы можете увидеть кнопки. Нажмите на нужную кнопку для действия.</value>
+  </data>
+  <data name="SendDateOfEvent" xml:space="preserve">
+    <value>Отправьте дату события в следующем формате: дд/мм/гггг</value>
+  </data>
+  <data name="SendNameOfEvent" xml:space="preserve">
+    <value>Отправьте название события</value>
+  </data>
+  <data name="SendNameOfPerson" xml:space="preserve">
+    <value>Отправьте имя человека, которого будете поздравлять или нажмите "Никто"</value>
+  </data>
+  <data name="SendTimeOfEvent" xml:space="preserve">
+    <value>Отравьте время события, чтобы напомнить вам о нём в нужное время. Формат сообщения: чч:мм</value>
   </data>
   <data name="SharePhoneNumber" xml:space="preserve">
     <value>Отправить контакт</value>
   </data>
   <data name="ShareTimeZone" xml:space="preserve">
     <value>Отправить локацию</value>
+  </data>
+  <data name="StringBuilderList" xml:space="preserve">
+    <value>{0}) Событие: "{1}". Дата: {2}</value>
   </data>
   <data name="SuccessfulRegistration" xml:space="preserve">
     <value>Вы успешно зарегестрировались, {0}!

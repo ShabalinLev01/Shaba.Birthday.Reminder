@@ -120,11 +120,41 @@
   <data name="AddNewEvent" xml:space="preserve">
     <value>➕New event</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChooseEventForDetailsOrAddNew" xml:space="preserve">
+    <value>Choose event for view detail information or click on button "New event".</value>
+  </data>
+  <data name="ClickButtonForAction" xml:space="preserve">
+    <value>Click on the desired button for action.</value>
+  </data>
   <data name="DeleteEvent" xml:space="preserve">
     <value>🗑️ Delete</value>
   </data>
+  <data name="DetailedInfoAboutEvent" xml:space="preserve">
+    <value>Event: {0},
+Person: {1},
+Date: {2},
+Time: {3}.</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>✅Done</value>
+  </data>
+  <data name="EditDate" xml:space="preserve">
+    <value>Edit date</value>
+  </data>
   <data name="EditEvent" xml:space="preserve">
     <value>✏️ Edit</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>Edit event's name</value>
+  </data>
+  <data name="EditPerson" xml:space="preserve">
+    <value>Edit person</value>
+  </data>
+  <data name="EditTime" xml:space="preserve">
+    <value>Edit time</value>
   </data>
   <data name="EmptyPhoneNumber" xml:space="preserve">
     <value>Please send contact for register you in our system:</value>
@@ -132,20 +162,56 @@
   <data name="EmptyTimeZone" xml:space="preserve">
     <value>Send your location, for detection your time zone. We don't save or share your location:</value>
   </data>
+  <data name="EventWasSuccessfulAdded" xml:space="preserve">
+    <value>Event was successful added!</value>
+  </data>
+  <data name="IncorrectDateTryAgain" xml:space="preserve">
+    <value>Something happened and I don't see date in your message, please try again. 
+Send date of event in next format: dd/mm/yyyy</value>
+  </data>
+  <data name="IncorrectNumberOfEventTryAgain" xml:space="preserve">
+    <value>Something happened and I don't see correct number in your message, please try again.</value>
+  </data>
+  <data name="IncorrectTimeTryAgain" xml:space="preserve">
+    <value>Something happened and I don't see time in your message, please try again.	
+Send time of event for remind you in next format: hh:mm</value>
+  </data>
+  <data name="InfoAboutEvent" xml:space="preserve">
+    <value>Info about event:
+</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Choose your language:</value>
   </data>
   <data name="ListOfEvents" xml:space="preserve">
     <value>📄 Events</value>
   </data>
+  <data name="NonePerson" xml:space="preserve">
+    <value>None</value>
+  </data>
   <data name="SendCommandForCreatingEvent" xml:space="preserve">
     <value>Now you can create, view, delete and edit your events. On the keyboard in this chat, you can see the buttons. Click on the desired button for action.</value>
+  </data>
+  <data name="SendDateOfEvent" xml:space="preserve">
+    <value>Send date of event in next format: dd/mm/yyyy</value>
+  </data>
+  <data name="SendNameOfEvent" xml:space="preserve">
+    <value>Send name of event</value>
+  </data>
+  <data name="SendNameOfPerson" xml:space="preserve">
+    <value>Send name of person or just click button "None"</value>
+  </data>
+  <data name="SendTimeOfEvent" xml:space="preserve">
+    <value>Send time of event for remind you in next format: hh:mm</value>
   </data>
   <data name="SharePhoneNumber" xml:space="preserve">
     <value>📱 Send contact</value>
   </data>
   <data name="ShareTimeZone" xml:space="preserve">
     <value>🗺️ Send location</value>
+  </data>
+  <data name="StringBuilderList" xml:space="preserve">
+    <value>{0}) Event: "{1}". Date: {2}</value>
   </data>
   <data name="SuccessfulRegistration" xml:space="preserve">
     <value>You're successful registrated, {0}.

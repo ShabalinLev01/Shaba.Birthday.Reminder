@@ -22,5 +22,12 @@ namespace Shaba.Birthday.Reminder.Bot.Services
 		IReplyMarkup GetLanguageMarkup();
 
 		IReplyMarkup GetBaseFunctionalMarkup(Language? lang);
+		IReplyMarkup GetKeyboardForNameOfPerson(Language? lang);
+		IReplyMarkup GetKeyboardForFinalize(Language? lang);
+		IReplyMarkup GetEditEventKeyboard(Language? lang);
+
+		IReplyMarkup GetCancelKeyboardForAddEvent(Language? lang);
+		IReplyMarkup GetAddEventKeyboard(Language? lang);
+		IReplyMarkup GetKeyboardForDetailedEvent(Language? lang);
 	}
 }

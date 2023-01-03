@@ -28,7 +28,7 @@ namespace Shaba.Birthday.Reminder.Repository.Repository
 
 		public async Task Update(User user)
 		{
-			_context.Update(user);
+			_context.Users.Update(user);
 			await _context.SaveChangesAsync();
 		}
 

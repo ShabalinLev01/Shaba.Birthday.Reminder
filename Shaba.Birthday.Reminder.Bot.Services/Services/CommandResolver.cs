@@ -68,7 +68,15 @@ namespace Shaba.Birthday.Reminder.Bot.Services.Services
 
 			if (update.Type == UpdateType.Message)
 			{
-				await _botService.SendText(update.Message?.Chat?.Id, "Я больше ничего не умею, прости...");
+				var lastAction = user.LastAction.Type;
+				if (!string.IsNullOrEmpty(lastAction))
+					await _botService.SendText(update.Message?.Chat?.Id, "Я больше ничего не умею, прости...");
+				else
+				{
+					await _commands(lastAction).Execute(update, user, update.CallbackQuery?.Data!);
+
+					await _botService.AnswerQueryCallback(update.CallbackQuery.Id);
+				}
 			}
 		}
 	}
